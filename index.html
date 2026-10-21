@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Days Self Control Challenge – The Master Plan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#08050e',
+                        darkCard: '#110a1c',
+                        darkBorder: '#231438',
+                        crimson: {
+                            DEFAULT: '#dc2626',
+                            glow: '#ff1a1a',
+                            dark: '#880808'
+                        },
+                        violetGlow: '#8b5cf6',
+                        goldGlow: '#f59e0b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #06040a;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(220, 38, 38, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .cinzel { font-family: 'Cinzel', serif; }
+
+        /* Glassmorphism elements */
+        .glass-card {
+            background: rgba(17, 10, 28, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 92, 246, 0.18);
+        }
+
+        .glass-card-crimson {
+            background: rgba(20, 6, 12, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(220, 38, 38, 0.25);
+        }
+
+        .glow-crimson {
+            box-shadow: 0 0 25px rgba(220, 38, 38, 0.35);
+        }
+
+        .glow-violet {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
+        }
+
+        /* 3D Book Effect */
+        .book-container {
+            perspective: 1200px;
+        }
+        .book-cover {
+            transform: rotateY(-18deg) rotateX(6deg);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+            transform-style: preserve-3d;
+            box-shadow: -15px 20px 30px rgba(0,0,0,0.8), 0 0 30px rgba(220, 38, 38, 0.25);
+        }
+        .book-container:hover .book-cover {
+            transform: rotateY(-6deg) rotateX(2deg) scale(1.02);
+            box-shadow: -20px 25px 40px rgba(0,0,0,0.9), 0 0 45px rgba(220, 38, 38, 0.45);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06040a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #231438;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dc2626;
+        }
+
+        /* Pulse Animations */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.03); }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+
+        .shimmer-button {
+            background: linear-gradient(90deg, #dc2626 0%, #ef4444 50%, #dc2626 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-200 antialiased selection:bg-crimson selection:text-white">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 w-full glass-card border-b border-violet-900/30 px-4 lg:px-8 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-purple-900 flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    30
+                </div>
+                <div>
+                    <span class="block cinzel font-bold text-sm sm:text-base tracking-wider text-slate-100">THE MASTER PLAN</span>
+                    <span class="block text-[10px] text-amber-500 font-medium tracking-widest uppercase">30 Days Self Control</span>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold">
+                <a href="#hero" class="hover:text-crimson transition-colors">Overview</a>
+                <a href="#reader" class="hover:text-amber-400 transition-colors">Book Reader</a>
+                <a href="#baseline" class="hover:text-purple-400 transition-colors">Baseline Reset</a>
+                <a href="#marriage" class="hover:text-amber-400 transition-colors">Marriage Prep</a>
+                <a href="#disclaimer" class="hover:text-slate-400 transition-colors">Health Note</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <!-- Urge SOS Button Trigger -->
+                <button onclick="toggleSOSModal()" class="px-3 py-1.5 rounded-lg bg-red-950/80 border border-crimson text-red-400 hover:bg-crimson hover:text-white transition-all text-xs font-bold flex items-center gap-1.5 shadow-lg animate-pulse">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-400"></i>
+                    <span>URGE SOS</span>
+                </button>
+                
+                <!-- Main Buy / Unlock CTA -->
+                <button onclick="triggerWhatsAppOrder('Top Bar')" class="shimmer-button text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-lg flex items-center gap-2 transform active:scale-95 transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Unlock ($10)</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION / PRODUCT OVERVIEW -->
+    <section id="hero" class="relative py-12 md:py-20 px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Column: Copy & Value Proposition -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-950/80 border border-violet-500/30 text-violet-300 text-xs font-semibold uppercase tracking-widest">
+                    <i class="fa-solid fa-shield-halved text-amber-400"></i>
+                    100% Discipline Protocol • Adult 18+ Edition
+                </div>
+
+                <h1 class="cinzel text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                    RECLAIM YOUR <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-400 to-purple-500">MIND, BODY & FAITH</span> IN 30 DAYS
+                </h1>
+
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+                    A rigorous, day-by-day master plan designed to permanently break pornography and masturbation habits. Rebuild high testosterone, deep focus, physical stamina, and spiritual strength.
+                </p>
+
+                <!-- Value Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                    <div class="p-3 rounded-xl glass-card text-center border-l-2 border-crimson">
+                        <div class="text-lg font-bold text-white">24-Hour</div>
+                        <div class="text-[11px] text-slate-400">Daily Routine</div>
+                    </div>
+                    <div class="p-3 rounded-xl glass-card text-center border-l-2 border-amber-500">
+                        <div class="text-lg font-bold text-white">Urge SOS</div>
+                        <div class="text-[11px] text-slate-400">Instant Protocol</div>
+                    </div>
+                    <div class="p-3 rounded-xl glass-card text-center border-l-2 border-purple-500">
+                        <div class="text-lg font-bold text-white">Spiritual</div>
+                        <div class="text-[11px] text-slate-400">PRAYER & DHIKR</div>
+                    </div>
+                    <div class="p-3 rounded-xl glass-card text-center border-l-2 border-emerald-500">
+                        <div class="text-lg font-bold text-white">$10 USD</div>
+                        <div class="text-[11px] text-slate-400">One-Time Access</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center lg:justify-start">
+                    <button onclick="scrollToReader()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-violet-700 to-purple-900 hover:from-violet-600 hover:to-purple-800 text-white font-bold text-sm tracking-wider uppercase shadow-xl hover:shadow-purple-900/40 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Read Free Day 1 Sample</span>
+                    </button>
+
+                    <button onclick="triggerWhatsAppOrder('Hero Unlock')" class="w-full sm:w-auto px-8 py-4 rounded-xl shimmer-button text-white font-extrabold text-sm tracking-wider uppercase shadow-2xl hover:shadow-red-600/50 transition-all flex items-center justify-center gap-3 group">
+                        <i class="fa-brands fa-whatsapp text-xl text-emerald-300"></i>
+                        <span>Unlock Full eBook ($10)</span>
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-center lg:justify-start gap-4 text-xs text-slate-400 pt-2">
+                    <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Instant WhatsApp Delivery</span>
+                    <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> PDF eBook Included</span>
+                    <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Lifetime Access</span>
+                </div>
+            </div>
+
+            <!-- Right Column: 3D Animated Book Cover -->
+            <div class="lg:col-span-5 flex justify-center z-10">
+                <div class="book-container relative">
+                    <!-- Glow Behind Cover -->
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-crimson via-violet-800 to-amber-500 rounded-2xl blur-2xl opacity-40 animate-pulse-glow"></div>
+                    
+                    <!-- Book Visual -->
+                    <div class="book-cover w-72 sm:w-80 h-[460px] sm:h-[500px] rounded-r-2xl rounded-l-sm bg-gradient-to-b from-slate-950 via-purple-950 to-slate-950 border-r-4 border-amber-500/60 p-6 flex flex-col justify-between relative overflow-hidden text-center border-t border-b border-purple-500/30">
+                        
+                        <!-- Dark Mind Master Canvas Illustration Overlay -->
+                        <div class="absolute inset-0 opacity-25 pointer-events-none flex items-center justify-center">
+                            <svg class="w-full h-full text-crimson" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2" />
+                                <path d="M100 20 C120 60, 140 80, 100 180 C60 80, 80 60, 100 20 Z" fill="none" stroke="currentColor" stroke-width="1" />
+                                <!-- Meditating Silhouette SVG representation -->
+                                <circle cx="100" cy="70" r="14" fill="currentColor" />
+                                <path d="M100 88 C70 95, 60 120, 50 145 L150 145 C140 120, 130 95, 100 88 Z" fill="currentColor" />
+                            </svg>
+                        </div>
+
+                        <!-- Top Header -->
+                        <div class="relative z-10 pt-2">
+                            <span class="text-[10px] tracking-widest text-amber-400 uppercase font-semibold block">THE ULTIMATE RECOVERY PROTOCOL</span>
+                            <div class="w-12 h-0.5 bg-crimson mx-auto my-2"></div>
+                        </div>
+
+                        <!-- Center Title -->
+                        <div class="relative z-10 my-auto">
+                            <!-- Meditating Mind Aura Graphic -->
+                            <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-t from-red-900/60 to-purple-900/60 border border-amber-500/40 flex items-center justify-center shadow-inner relative">
+                                <i class="fa-solid fa-brain text-3xl text-amber-300"></i>
+                                <div class="absolute inset-0 rounded-full border border-red-500/30 animate-ping"></div>
+                            </div>
+
+                            <h2 class="cinzel text-2xl font-black text-white tracking-wider leading-tight">
+                                30 DAYS <br/>
+                                <span class="text-crimson">SELF CONTROL</span>
+                            </h2>
+                            <p class="text-xs text-amber-400 font-medium tracking-widest mt-1 uppercase">THE MASTER PLAN</p>
+                        </div>
+
+                        <!-- Bottom Seal -->
+                        <div class="relative z-10 border-t border-purple-800/40 pt-4 flex items-center justify-between text-[10px] text-slate-400">
+                            <span class="font-mono text-amber-400">100% DISCIPLINE</span>
+                            <span>ADULTS 18+</span>
+                            <span class="font-mono text-purple-400">OFFICIAL EDITION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MAIN READER & DASHBOARD SECTION -->
+    <section id="reader" class="py-12 px-2 sm:px-4 lg:px-8 max-w-7xl mx-auto w-full">
+        
+        <!-- Reader Navigation Header -->
+        <div class="glass-card rounded-2xl p-4 sm:p-6 mb-8 border border-purple-900/40">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-4 border-b border-purple-900/40">
+                <div>
+                    <h2 class="cinzel text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-book-bookmark text-crimson"></i>
+                        eBook Day-by-Day Master Reader
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Select any day to inspect your routine. Day 1 is free sample access.</p>
+                </div>
+
+                <!-- Action Controls -->
+                <div class="flex items-center gap-3 w-full md:w-auto justify-end">
+                    <button onclick="downloadPDFSummary()" class="px-3 py-2 rounded-xl bg-purple-950/80 border border-purple-700/50 hover:bg-purple-900 text-purple-200 text-xs font-semibold flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-file-pdf text-red-400"></i>
+                        <span>Download PDF Summary</span>
+                    </button>
+
+                    <button onclick="triggerWhatsAppOrder('Reader Bar')" class="shimmer-button text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Unlock All Days ($10)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day Selector Tabs (Days 1 to 30 Carousel) -->
+            <div class="pt-4">
+                <div class="text-xs font-bold uppercase text-amber-400 tracking-wider mb-2 flex justify-between items-center">
+                    <span>Program Calendar</span>
+                    <span id="currentDayLabel" class="text-slate-300 font-normal">Active View: Day 1 (FREE SAMPLE)</span>
+                </div>
+                <div class="flex items-center gap-2 overflow-x-auto pb-3 pt-1 no-scrollbar scroll-smooth" id="dayTabsContainer">
+                    <!-- Day tabs populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- DYNAMIC READER DISPLAY CONTENT CONTAINER -->
+        <div id="readerContentArea" class="space-y-8">
+            <!-- JavaScript renders Day 1 or Locked View dynamically -->
+        </div>
+
+    </section>
+
+    <!-- SPECIAL SECTION: BASELINE RECOVERY PLAN -->
+    <section id="baseline" class="py-12 px-4 max-w-7xl mx-auto w-full">
+        <div class="glass-card-crimson rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-crimson/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-10 h-10 rounded-xl bg-crimson/20 border border-crimson/50 flex items-center justify-center text-crimson text-xl font-bold">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </span>
+                <div>
+                    <h2 class="cinzel text-2xl sm:text-3xl font-bold text-white">Baseline Recovery Protocol</h2>
+                    <p class="text-xs text-red-300">For those recovering from heavy addiction or severe relapse fatigue</p>
+                </div>
+            </div>
+
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                If you have been caught in a cycle of heavy daily indulgence for months or years, your dopamine receptors, pelvic muscle tone, and nervous system require a structured baseline restoration. Do not panic—your body is built to heal rapidly once triggers are eliminated.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Dopamine Reset -->
+                <div class="p-5 rounded-2xl bg-black/50 border border-purple-900/40">
+                    <div class="text-amber-400 text-lg font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-brain"></i>
+                        1. Dopamine Receptor Reset
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                        <li>Eliminate all explicit visual trigger browsing immediately.</li>
+                        <li>Zero high-dopamine endless social media scrolling (Reels, Shorts, TikTok).</li>
+                        <li>Replace instant pleasure with delayed rewards (cold showers, hard workouts).</li>
+                    </ul>
+                </div>
+
+                <!-- Pelvic Floor Kegels -->
+                <div class="p-5 rounded-2xl bg-black/50 border border-purple-900/40">
+                    <div class="text-crimson text-lg font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-person-running"></i>
+                        2. Pelvic Floor Restoration
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-2">
+                        Excessive strain weakens the pelvic muscle network (Pubococcygeus muscle).
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li class="bg-purple-950/40 p-2 rounded border border-purple-800/30">
+                            <strong>Daily Kegel Exercise:</strong> Squeeze pelvic muscles (as if stopping urination flow) for 5 seconds, release for 5 seconds. Repeat 15 times, twice daily.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sleep & Hormonal Foundation -->
+                <div class="p-5 rounded-2xl bg-black/50 border border-purple-900/40">
+                    <div class="text-purple-400 text-lg font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-bed"></i>
+                        3. Sleep & Zinc Nutrition
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                        <li>Strict 10:00 PM sleep to optimize natural nightly Testosterone spike.</li>
+                        <li>Consume pumpkin seeds, almonds, dates, and clean water (3.5L/day).</li>
+                        <li>If physical pelvic pain or persistent erectile issues exist, consult a medical practitioner.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIAL SECTION: MARRIAGE PREPARATION GUIDE -->
+    <section id="marriage" class="py-12 px-4 max-w-7xl mx-auto w-full">
+        <div class="glass-card rounded-3xl p-6 sm:p-10 border border-amber-500/30 relative">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-400 text-xl font-bold">
+                    <i class="fa-solid fa-ring"></i>
+                </span>
+                <div>
+                    <h2 class="cinzel text-2xl sm:text-3xl font-bold text-white">Men Preparing For Marriage</h2>
+                    <p class="text-xs text-amber-300">Building natural sexual health, emotional stamina, and marital intimacy</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4 text-sm text-slate-300">
+                    <p>
+                        Marriage requires genuine physical stamina, emotional presence, and clean hormonal balance. Pornography creates artificial brain expectations that ruin real-world connection. 
+                    </p>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+                        <h4 class="font-bold text-amber-400 text-xs uppercase tracking-wider">Natural Virility Rules:</h4>
+                        <ul class="text-xs space-y-1.5 list-disc list-inside text-slate-300">
+                            <li><strong>Unplug from Artificial Stimuli:</strong> Allow your brain 30-60 days minimum to re-sensitize to natural human touch and emotional bonding.</li>
+                            <li><strong>Leg Drive Workouts:</strong> Heavy squats and lunges increase pelvic blood circulation and natural growth hormone response.</li>
+                            <li><strong>Clean Mindset:</strong> True intimacy is rooted in love, modesty, respect, and mutual happiness—not hyper-sexualized pixel graphics.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-purple-950/60 to-black border border-purple-800/40 flex flex-col justify-between">
+                    <div>
+                        <h4 class="cinzel text-lg font-bold text-white mb-2">The Marriage Readiness Pledge</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            "By controlling my gaze and desires today, I preserve my energy, respect, and vitality for my future spouse. I choose real honor over fleeting lonely shame."
+                        </p>
+                    </div>
+
+                    <button onclick="triggerWhatsAppOrder('Marriage Section')" class="w-full py-3 rounded-xl shimmer-button text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Start Marriage Prep Master Plan ($10)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIAL SECTION: DAY 30 MASTER REWARD & BARAKAH PROMISE -->
+    <section class="py-12 px-4 max-w-7xl mx-auto w-full">
+        <div class="glass-card rounded-3xl p-6 sm:p-10 border border-purple-500/30 text-center relative overflow-hidden">
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="w-16 h-16 rounded-full bg-amber-500/20 border-2 border-amber-400 mx-auto flex items-center justify-center text-amber-300 text-2xl shadow-xl">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+
+                <h2 class="cinzel text-3xl sm:text-4xl font-black text-white">Day 30: The Final Ritual & Beyond</h2>
+
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    Upon reaching Day 30, you undergo the <strong class="text-amber-400">Master Victory Fast & Gratitude Prayer</strong>. You are no longer controlled by baseline impulses. Discipline unlocks immense <span class="text-purple-300 font-semibold">Focus, Barakah (Spiritual Blessings), Clear Vision, and Rizq (Sustenance)</span> in your career, relationships, and health, Inshallah.
+                </p>
+
+                <div class="pt-4">
+                    <button onclick="triggerWhatsAppOrder('Day 30 Promise')" class="px-8 py-4 rounded-xl shimmer-button text-white font-extrabold text-sm uppercase tracking-wider shadow-2xl hover:scale-105 transition-all inline-flex items-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Begin Your 30-Day Master Transformation ($10)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HONEST HEALTH NOTE / DISCLAIMER -->
+    <section id="disclaimer" class="py-8 px-4 max-w-5xl mx-auto w-full">
+        <div class="p-6 rounded-2xl bg-black/80 border border-slate-800 text-slate-400 text-xs leading-relaxed space-y-2">
+            <div class="flex items-center gap-2 font-bold text-amber-400 uppercase tracking-wider text-xs">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Honest Health Note & Medical Disclaimer
+            </div>
+            <p>
+                This eBook and self-control challenge ("The Master Plan") is strictly an educational lifestyle, habit discipline, and fitness guide designed for adults (18+). It does not constitute formal medical diagnosis, treatment, or clinical prescription. 
+            </p>
+            <p>
+                <strong>No Scam Oils or Miracle Pills:</strong> We explicitly advise against purchasing unverified enlargement creams, dangerous pills, or deceptive oil scams online. Real physical health is achieved exclusively through clean nutrition, sleep, pelvic floor exercises, mental discipline, and proper healthcare. If you suffer from severe chronic pelvic pain, clinical depression, or erectile dysfunction, please consult a licensed medical physician or urologist.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="mt-16 border-t border-purple-900/30 glass-card py-10 px-4 text-center">
+        <div class="max-w-7xl mx-auto space-y-6">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-crimson flex items-center justify-center text-white font-bold text-sm">30</div>
+                <span class="cinzel font-bold text-slate-200 tracking-wider">30 DAYS SELF CONTROL – THE MASTER PLAN</span>
+            </div>
+
+            <p class="text-xs text-slate-400 max-w-xl mx-auto">
+                Adult 18+ Edition • Designed for worldwide discipline seekers. Transform your habits, strengthen your faith, and master your life.
+            </p>
+
+            <div class="pt-2">
+                <button onclick="triggerWhatsAppOrder('Footer')" class="px-6 py-3 rounded-xl bg-emerald-950 border border-emerald-600/50 text-emerald-300 hover:bg-emerald-800 hover:text-white transition-all text-xs font-bold inline-flex items-center gap-2 shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>For More Challenges & Direct Access, DM on WhatsApp</span>
+                </button>
+            </div>
+
+            <div class="text-[10px] text-slate-600 pt-4 border-t border-slate-900">
+                &copy; 2026 30 Days Self Control Master Plan. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- URGE SOS QUICK ACTION MODAL -->
+    <div id="sosModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="glass-card-crimson max-w-lg w-full rounded-3xl p-6 sm:p-8 space-y-6 border-2 border-crimson relative shadow-2xl animate-pulse-glow">
+            
+            <button onclick="toggleSOSModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-2">
+                <div class="w-16 h-16 rounded-full bg-crimson/20 border-2 border-crimson mx-auto flex items-center justify-center text-crimson text-3xl animate-bounce">
+                    <i class="fa-solid fa-shield-cat"></i>
+                </div>
+                <h3 class="cinzel text-2xl font-black text-white">URGE SOS PROTOCOL</h3>
+                <p class="text-xs text-red-300 uppercase tracking-widest font-semibold">Execute these 4 steps IMMEDIATELY. Do not think.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="p-3 rounded-xl bg-black/60 border-l-4 border-crimson flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-crimson text-white font-bold text-xs flex items-center justify-center flex-shrink-0">1</span>
+                    <div>
+                        <div class="text-xs font-bold text-white">LEAVE THE ROOM IMMEDIATELY</div>
+                        <div class="text-[11px] text-slate-300">Stand up right now. Get out of your bedroom or isolated space into a common area or balcony.</div>
+                    </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-black/60 border-l-4 border-amber-500 flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-amber-500 text-black font-bold text-xs flex items-center justify-center flex-shrink-0">2</span>
+                    <div>
+                        <div class="text-xs font-bold text-white">SPLASH COLD WATER & PERFORM WUDU</div>
+                        <div class="text-[11px] text-slate-300">Wash your face with freezing cold water. Perform wudu to reset physical nerve temperature.</div>
+                    </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-black/60 border-l-4 border-purple-500 flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-purple-500 text-white font-bold text-xs flex items-center justify-center flex-shrink-0">3</span>
+                    <div>
+                        <div class="text-xs font-bold text-white">DO 20 IMMEDIATE PUSHUPS</div>
+                        <div class="text-[11px] text-slate-300">Drop down and execute 20 deep pushups to force blood flow into upper body muscles.</div>
+                    </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-black/60 border-l-4 border-emerald-500 flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-emerald-500 text-black font-bold text-xs flex items-center justify-center flex-shrink-0">4</span>
+                    <div>
+                        <div class="text-xs font-bold text-white">RECITE AYAT AL-KURSI / CALL A FRIEND</div>
+                        <div class="text-[11px] text-slate-300">Recite Ayat al-Kursi aloud or call a trusted brother to disrupt mental urge loops.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-2 flex gap-3">
+                <button onclick="toggleSOSModal()" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider">
+                    I Have Controlled The Urge
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING QUICK SOS WIDGET BUTTON -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="toggleSOSModal()" class="w-14 h-14 rounded-full bg-crimson hover:bg-red-600 text-white font-extrabold flex items-center justify-center shadow-2xl border-2 border-amber-400 animate-bounce group transition-transform active:scale-90">
+            <i class="fa-solid fa-triangle-exclamation text-xl group-hover:rotate-12 transition-transform"></i>
+        </button>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC & CONTENT RENDERER -->
+    <script>
+        // Global State & Data Models
+        let activeDay = 1;
+        let dhikrCount = 0;
+
+        // Day Preview Teasers for Locked Screen Display
+        const dayTeasers = {
+            2: "Building Dopamine Resistance & Morning Cold Shower Routine",
+            3: "Overcoming Night Trigger Urges & Mind Reframing",
+            4: "Sunnah Fasting Day Protocol & Fast-Breaking Clean Nutrition",
+            5: "Pelvic Muscle Strengthening & Leg Strength Session",
+            6: "Social Media Reel Detox & Screen Time Restriction",
+            7: "FIRST WEEK REVIEW: Dopamine Baseline Assessment & Reset Plan",
+            8: "Hormone Optimization: Natural Testosterone Boosting Foods",
+            9: "Lowering The Gaze Master Technique in Public Spaces",
+            10: "Mental Toughness: 1-Minute Isometric Wall Sits & Mind Journaling",
+            14: "SECOND WEEK REVIEW: Reclaiming Vitality & Deeper Prayer Focus",
+            21: "THIRD WEEK REVIEW: Habit Rewiring & Strong Intimacy Mindset",
+            30: "THE MASTER VICTORY: Day 30 Ritual, Barakah & Life Maintenance Plan"
+        };
+
+        // Initialize App
+        window.addEventListener('DOMContentLoaded', () => {
+            renderDayTabs();
+            renderReaderContent(1);
+        });
+
+        // Render Day Carousel Tabs (1 to 30)
+        function renderDayTabs() {
+            const container = document.getElementById('dayTabsContainer');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= 30; i++) {
+                const isUnlocked = (i === 1);
+                const isActive = (i === activeDay);
+
+                const btn = document.createElement('button');
+                btn.onclick = () => selectDay(i);
+                
+                btn.className = `flex-shrink-0 px-4 py-2.5 rounded-xl font-bold text-xs transition-all flex items-center gap-2 border ${
+                    isActive 
+                        ? 'bg-crimson text-white border-red-400 shadow-lg scale-105' 
+                        : isUnlocked 
+                            ? 'bg-purple-950/60 text-purple-200 border-purple-700/50 hover:bg-purple-900' 
+                            : 'bg-black/60 text-slate-400 border-slate-800 hover:border-slate-700'
+                }`;
+
+                btn.innerHTML = `
+                    <span>Day ${i}</span>
+                    ${isUnlocked 
+                        ? '<span class="text-[9px] bg-emerald-900/80 text-emerald-300 px-1.5 py-0.5 rounded font-mono">FREE</span>' 
+                        : '<i class="fa-solid fa-lock text-[10px] text-amber-500"></i>'}
+                `;
+
+                container.appendChild(btn);
+            }
+        }
+
+        // Handle Day Selection
+        function selectDay(dayNum) {
+            activeDay = dayNum;
+            renderDayTabs();
+            renderReaderContent(dayNum);
+            
+            const label = document.getElementById('currentDayLabel');
+            if (dayNum === 1) {
+                label.innerText = `Active View: Day 1 (FREE UNLOCKED SAMPLE)`;
+                label.className = "text-emerald-400 font-semibold";
+            } else {
+                label.innerText = `Active View: Day ${dayNum} (LOCKED - $10 UNLOCK REQUIRED)`;
+                label.className = "text-amber-400 font-semibold";
+            }
+        }
+
+        // Render Reader Main Content View
+        function renderReaderContent(dayNum) {
+            const area = document.getElementById('readerContentArea');
+
+            if (dayNum === 1) {
+                // UNLOCKED FREE SAMPLE DAY 1 CONTENT
+                area.innerHTML = `
+                    <!-- DAY 1 TITLE CARD -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-crimson relative overflow-hidden">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <div class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full mb-2 border border-emerald-700/40">
+                                    <i class="fa-solid fa-unlock"></i> FULL UNLOCKED DAY 1 SAMPLE
+                                </div>
+                                <h3 class="cinzel text-2xl sm:text-4xl font-black text-white">DAY 1: THE FOUNDATION RESET</h3>
+                                <p class="text-xs sm:text-sm text-slate-300 mt-1">Establishing absolute daily routine control, spiritual timing, and physical vitality.</p>
+                            </div>
+                            <div class="text-right bg-purple-950/60 p-3 rounded-2xl border border-purple-800/40">
+                                <div class="text-xs text-slate-400">Sleep Schedule Target</div>
+                                <div class="text-sm font-bold text-amber-400"><i class="fa-solid fa-moon mr-1"></i> 10:00 PM - 05:00 AM (7 Hours Total)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 24-HOUR HOURLY ROUTINE TIMELINE GRID -->
+                    <div class="space-y-4">
+                        <h4 class="cinzel text-lg font-bold text-amber-400 flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-crimson"></i>
+                            24-Hour Master Routine Timeline
+                        </h4>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            
+                            <!-- 05:00 AM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-sun mr-1 text-amber-400"></i> 05:00 AM</span>
+                                    <span class="bg-purple-900/60 text-purple-200 px-2 py-0.5 rounded text-[10px]">WAKE UP & SPIRITUAL</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">Tahajjud, Cold Water Wudu & Fajr</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Wake up immediately upon alarm. Drink 500ml room temperature water. Perform cold wudu. Offer 2 Rakat Tahajjud and Fajr prayer in congregation or on time.
+                                </p>
+                            </div>
+
+                            <!-- 06:00 AM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-dumbbell mr-1 text-crimson"></i> 06:00 AM</span>
+                                    <span class="bg-red-950/60 text-red-300 px-2 py-0.5 rounded text-[10px]">PHYSICAL WORKOUT</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">1-Min Micro Exercise + 30-Min Workout</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Execute 1-Minute Isometric Wall Sit (see guide below). Follow with 3 sets of 15 pushups, bodyweight squats, and 2-minute plank.
+                                </p>
+                            </div>
+
+                            <!-- 07:30 AM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-utensils mr-1 text-emerald-400"></i> 07:30 AM</span>
+                                    <span class="bg-emerald-950/60 text-emerald-300 px-2 py-0.5 rounded text-[10px]">NUTRITION</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">Vitality Breakfast Shake</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Eat 3 dates + 7 soaked almonds. Drink high-protein smoothie: milk, 1 banana, chia seeds, and oat powder. Avoid all processed sugar or pastries.
+                                </p>
+                            </div>
+
+                            <!-- 09:00 AM - 01:00 PM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-briefcase mr-1 text-purple-400"></i> 09:00 AM - 01:00 PM</span>
+                                    <span class="bg-purple-900/60 text-purple-200 px-2 py-0.5 rounded text-[10px]">DEEP WORK</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">Deep Focused Work & Gaze Guard</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Put phone on Do Not Disturb mode. Keep eyes strictly focused on work tasks. If explicit ads appear, lower gaze immediately.
+                                </p>
+                            </div>
+
+                            <!-- 01:30 PM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-mosque mr-1 text-amber-400"></i> 01:30 PM</span>
+                                    <span class="bg-amber-950/60 text-amber-300 px-2 py-0.5 rounded text-[10px]">PRAYER & LUNCH</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">Dhuhr Prayer & Clean Meal</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Pray Dhuhr on time. Clean lunch: Grilled chicken/fish, green spinach salad, brown rice, and 1 full bottle of water.
+                                </p>
+                            </div>
+
+                            <!-- 05:00 PM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-feather mr-1 text-purple-400"></i> 05:00 PM</span>
+                                    <span class="bg-purple-900/60 text-purple-200 px-2 py-0.5 rounded text-[10px]">MIND & JOURNAL</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">Asr Prayer & 1-Min Mind Journaling</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Offer Asr prayer. Complete daily journaling prompt: <em>"What triggers did I successfully conquer today?"</em>
+                                </p>
+                            </div>
+
+                            <!-- 07:00 PM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-book mr-1 text-emerald-400"></i> 07:00 PM</span>
+                                    <span class="bg-emerald-950/60 text-emerald-300 px-2 py-0.5 rounded text-[10px]">MAGHRIB & STUDY</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">Maghrib, Light Dinner & Quran Read</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Pray Maghrib. Light evening meal (vegetable soup / dry fruits). Read 2 pages of Quran with translation.
+                                </p>
+                            </div>
+
+                            <!-- 08:30 PM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-shield mr-1 text-crimson"></i> 08:30 PM</span>
+                                    <span class="bg-red-950/60 text-red-300 px-2 py-0.5 rounded text-[10px]">ISHA & DIGITAL DETOX</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">Isha Prayer & Phone Isolation</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Pray Isha. Turn off phone Wi-Fi or leave phone in another room. Never take phone to bed.
+                                </p>
+                            </div>
+
+                            <!-- 10:00 PM -->
+                            <div class="p-4 rounded-2xl glass-card border border-purple-900/40 space-y-2 relative">
+                                <div class="flex items-center justify-between text-xs font-mono text-amber-400 border-b border-purple-900/40 pb-2">
+                                    <span><i class="fa-solid fa-bed mr-1 text-purple-400"></i> 10:00 PM</span>
+                                    <span class="bg-purple-900/60 text-purple-200 px-2 py-0.5 rounded text-[10px]">SLEEP RECOVERY</span>
+                                </div>
+                                <h5 class="font-bold text-white text-sm">Night Dhikr & Immediate Sleep</h5>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Recite Ayat al-Kursi and 33x SubhanAllah, Alhamdulillah, Allahu Akbar. Sleep flat on back or right side.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- EXERCISE & MICRO-TASK BREAKDOWN -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        
+                        <!-- 1-Min Exercise Guide Visual Card -->
+                        <div class="glass-card rounded-3xl p-6 border border-purple-900/40 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-lg bg-crimson/20 border border-crimson flex items-center justify-center text-crimson text-sm font-bold">
+                                    <i class="fa-solid fa-stopwatch"></i>
+                                </span>
+                                <div>
+                                    <h4 class="cinzel text-lg font-bold text-white">Day 1 Micro-Exercise: 60-Sec Wall Sit</h4>
+                                    <p class="text-xs text-slate-400">Step-by-step visual execution guide</p>
+                                </div>
+                            </div>
+
+                            <!-- SVG Illustration vector representation for Wall Sit -->
+                            <div class="w-full h-40 rounded-2xl bg-slate-950 border border-purple-900/30 flex items-center justify-center p-4">
+                                <svg class="h-full text-crimson" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2">
+                                    <!-- Wall line -->
+                                    <line x1="150" y1="10" x2="150" y2="110" stroke="#8b5cf6" stroke-width="4" stroke-dasharray="4 2"/>
+                                    <!-- Person figure wall sitting -->
+                                    <circle cx="130" cy="30" r="8" fill="#f59e0b" stroke="none"/>
+                                    <!-- Torso pressed against wall -->
+                                    <line x1="130" y1="38" x2="130" y2="70"/>
+                                    <!-- Thighs 90 degrees parallel to floor -->
+                                    <line x1="130" y1="70" x2="100" y2="70" stroke-width="3"/>
+                                    <!-- Shin 90 degrees to floor -->
+                                    <line x1="100" y1="70" x2="100" y2="105" stroke-width="3"/>
+                                    <!-- Arms crossed -->
+                                    <line x1="130" y1="50" x2="115" y2="55"/>
+                                </svg>
+                            </div>
+
+                            <ol class="text-xs text-slate-300 space-y-2 list-decimal list-inside">
+                                <li>Lean your back flat against a sturdy wall.</li>
+                                <li>Slide down until your knees form a 90-degree bend parallel to floor.</li>
+                                <li>Hold position for 60 continuous seconds without touching thighs.</li>
+                                <li><strong>Benefits:</strong> Builds mental resilience, leg blood flow, pelvic stability.</li>
+                            </ol>
+                        </div>
+
+                        <!-- Interactive Dhikr & Journal Widget -->
+                        <div class="glass-card rounded-3xl p-6 border border-purple-900/40 space-y-4 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500 flex items-center justify-center text-amber-400 text-sm font-bold">
+                                        <i class="fa-solid fa-[#]"></i>
+                                    </span>
+                                    <div>
+                                        <h4 class="cinzel text-lg font-bold text-white">Spiritual Dhikr Counter Widget</h4>
+                                        <p class="text-xs text-slate-400">Recite: "Astaghfirullah" (I seek forgiveness from Allah)</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-black/60 border border-purple-900/40 text-center my-4">
+                                    <div id="dhikrDisplay" class="cinzel text-4xl font-black text-amber-400">0</div>
+                                    <div class="text-[10px] uppercase tracking-widest text-slate-400 mt-1">Target: 100 Times Daily</div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <button onclick="incrementDhikr()" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg transform active:scale-95 transition-all">
+                                    <i class="fa-solid fa-plus mr-1"></i> Count Dhikr (+1)
+                                </button>
+                                <button onclick="resetDhikr()" class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 text-xs font-bold">
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- DAY 1 COMPLETION CHECKLIST -->
+                    <div class="p-6 rounded-3xl glass-card border border-emerald-900/40 space-y-3">
+                        <h4 class="cinzel text-base font-bold text-emerald-400 flex items-center gap-2">
+                            <i class="fa-solid fa-square-check"></i>
+                            Day 1 Completion Accountability Checklist
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+                            <label class="flex items-center gap-2 p-2 rounded-xl bg-black/40 border border-slate-800 cursor-pointer">
+                                <input type="checkbox" class="accent-emerald-500 rounded">
+                                <span>5 Prayers Completed</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 rounded-xl bg-black/40 border border-slate-800 cursor-pointer">
+                                <input type="checkbox" class="accent-emerald-500 rounded">
+                                <span>Zero Trigger Peeking</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 rounded-xl bg-black/40 border border-slate-800 cursor-pointer">
+                                <input type="checkbox" class="accent-emerald-500 rounded">
+                                <span>60-Sec Wall Sit Done</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2 rounded-xl bg-black/40 border border-slate-800 cursor-pointer">
+                                <input type="checkbox" class="accent-emerald-500 rounded">
+                                <span>Phone Outside Bed</span>
+                            </label>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // LOCKED SCREEN OVERLAY FOR DAYS 2 TO 30
+                const teaserText = dayTeasers[dayNum] || "Advanced Mental Conditioning, Hormonal Recovery & Habit Rewiring Protocol";
+                
+                area.innerHTML = `
+                    <div class="glass-card-crimson rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden border-2 border-crimson/60 shadow-2xl">
+                        
+                        <!-- Glow Background -->
+                        <div class="absolute -inset-10 bg-gradient-to-r from-crimson/20 via-purple-900/20 to-amber-500/10 blur-3xl pointer-events-none"></div>
+
+                        <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+                            
+                            <!-- Glowing Crimson Lock Icon -->
+                            <div class="w-20 h-20 rounded-full bg-red-950/90 border-2 border-crimson mx-auto flex items-center justify-center text-crimson text-3xl shadow-2xl animate-pulse">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+
+                            <div>
+                                <span class="text-xs font-mono tracking-widest text-amber-400 uppercase bg-amber-950/60 px-3 py-1 rounded-full border border-amber-800/40">
+                                    RESTRICTED ACCESS • DAY ${dayNum}
+                                </span>
+                                <h3 class="cinzel text-3xl sm:text-4xl font-black text-white mt-3">
+                                    DAY ${dayNum} IS LOCKED
+                                </h3>
+                                <p class="text-sm text-slate-300 mt-2 italic font-light">
+                                    "${teaserText}"
+                                </p>
+                            </div>
+
+                            <!-- Teaser Features -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left py-2">
+                                <div class="p-3 rounded-xl bg-black/60 border border-purple-900/40 text-xs">
+                                    <i class="fa-solid fa-check-circle text-crimson mr-1"></i> Full 24-hr schedule
+                                </div>
+                                <div class="p-3 rounded-xl bg-black/60 border border-purple-900/40 text-xs">
+                                    <i class="fa-solid fa-check-circle text-amber-400 mr-1"></i> Specialized workouts
+                                </div>
+                                <div class="p-3 rounded-xl bg-black/60 border border-purple-900/40 text-xs">
+                                    <i class="fa-solid fa-check-circle text-purple-400 mr-1"></i> Specific Duas & Dhikr
+                                </div>
+                            </div>
+
+                            <!-- Big Unlock Call-To-Action Button -->
+                            <div class="pt-4 space-y-3">
+                                <button onclick="triggerWhatsAppOrder('Day ${dayNum} Lock Screen')" class="w-full sm:w-auto px-10 py-5 rounded-2xl shimmer-button text-white font-black text-base uppercase tracking-wider shadow-2xl hover:scale-105 transition-all inline-flex items-center justify-center gap-3">
+                                    <i class="fa-brands fa-whatsapp text-2xl text-emerald-300"></i>
+                                    <span>UNLOCK $10 – 30 DAYS SELF CONTROL</span>
+                                </button>
+                                
+                                <p class="text-[11px] text-slate-400">
+                                    One-time payment of $10 USD. Instant PDF & eBook delivery via WhatsApp. Lifetime access worldwide.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Increment Dhikr Widget
+        function incrementDhikr() {
+            dhikrCount++;
+            document.getElementById('dhikrDisplay').innerText = dhikrCount;
+        }
+
+        // Reset Dhikr Widget
+        function resetDhikr() {
+            dhikrCount = 0;
+            document.getElementById('dhikrDisplay').innerText = dhikrCount;
+        }
+
+        // Toggle Urge SOS Quick Action Modal
+        function toggleSOSModal() {
+            const modal = document.getElementById('sosModal');
+            modal.classList.toggle('hidden');
+        }
+
+        // Scroll smooth to Reader area
+        function scrollToReader() {
+            document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Trigger Direct WhatsApp Purchase Order (without disclosing phone number on UI text)
+        function triggerWhatsAppOrder(sourceLocation) {
+            const prefilledMessage = `Hello, I want to purchase "30 Days Self Control Challenge – The Master Plan" ($10 USD) [Source: ${sourceLocation}]. Please share payment & instant download access details.`;
+            
+            // Encode text safely for wa.me URL
+            const encodedText = encodeURIComponent(prefilledMessage);
+            const whatsappURL = `https://wa.me/?text=${encodedText}`;
+
+            // Open WhatsApp directly in new window
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Download PDF Summary Generator
+        function downloadPDFSummary() {
+            // Trigger browser print to PDF feature or direct save
+            const printContent = `
+                =======================================================
+                30 DAYS SELF CONTROL CHALLENGE - THE MASTER PLAN SUMMARY
+                =======================================================
+                Product: 30 Days Self Control eBook ($10 USD)
+                Goal: Day-by-day protocol to quit pornography/masturbation.
+                
+                DAY 1 FREE SAMPLE RECAP:
+                - Sleep: 10:00 PM to 05:00 AM (7 Hours Total)
+                - Micro-Exercise: 60-Sec Isometric Wall Sit
+                - Nutrition: Almonds, Dates, Chia Shake, Green Vegetables
+                - Spiritual: Tahajjud, 5 Daily Prayers, Astaghfirullah Dhikr
+                - Relapse Recovery: Restart current day with immediate cold wudu.
+                
+                To unlock Days 2 through 30, contact via WhatsApp to order full PDF ($10).
+                =======================================================
+            `;
+
+            const blob = new Blob([printContent], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = '30-Days-Self-Control-Master-Plan-Summary.txt';
+            link.click();
+        }
+    </script>
+</body>
+</html>
