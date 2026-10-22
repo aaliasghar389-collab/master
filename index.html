@@ -574,6 +574,7 @@
         // Global State & Data Models
         let activeDay = 1;
         let dhikrCount = 0;
+        const TARGET_WHATSAPP_NUMBER = "923077661173";
 
         // Day Preview Teasers for Locked Screen Display
         const dayTeasers = {
@@ -969,15 +970,15 @@
             document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Trigger Direct WhatsApp Purchase Order (without disclosing phone number on UI text)
+        // Trigger Direct WhatsApp Purchase Order automatically directed to target phone number
         function triggerWhatsAppOrder(sourceLocation) {
-            const prefilledMessage = `Hello, I want to purchase "30 Days Self Control Challenge – The Master Plan" ($10 USD) [Source: ${sourceLocation}]. Please share payment & instant download access details.`;
+            const prefilledMessage = `Assalamu Alaikum! I want to order the "30 Days Self Control Challenge - The Master Plan" eBook ($10) [Section: ${sourceLocation}]. Please send me the payment details / access link.`;
             
-            // Encode text safely for wa.me URL
+            // Encode text safely for wa.me URL targeting +923077661173
             const encodedText = encodeURIComponent(prefilledMessage);
-            const whatsappURL = `https://wa.me/?text=${encodedText}`;
+            const whatsappURL = `https://wa.me/${TARGET_WHATSAPP_NUMBER}?text=${encodedText}`;
 
-            // Open WhatsApp directly in new window
+            // Open WhatsApp directly
             window.open(whatsappURL, '_blank');
         }
 
